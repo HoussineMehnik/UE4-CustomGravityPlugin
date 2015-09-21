@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Custom Gravity Plugin",
+	"Description": "Custom Gravity Plugin",
+	"Category": "Other",
+	"CreatedBy": "Elhoussine Mehnik (Mhousse1247)",
+	"CreatedByURL": "https://twitter.com/HoussineMehnik",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"Modules": [
+		{
+			"Name": "CustomGravityPlugin",
+			"Type": "Developer",
+			"LoadingPhase": "Default"
+		}
+	],
+	"EnabledByDefault": false,
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"Installed": false
+}

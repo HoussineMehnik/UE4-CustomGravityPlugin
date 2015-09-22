@@ -23,13 +23,6 @@ Five Gravity Modes are allowed :
 ## C++ Classes Hierarchy :
 
 ![C++ Classes Hierarchy ](https://raw.githubusercontent.com/mhousse1247/UE4-CustomGravityPlugin/master/ClassedHierarchy.PNG)
-
-
-### How to add it to my project ?
-
-Go To your project folder , copy "Custom Gravity Plugin" folder into "Plugins" folder.
-
-If Plugins folder does not exist , create an empty folder and name it "Plugins".
        
 ## Quick demonstration :
 

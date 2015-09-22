@@ -2,7 +2,7 @@ Unreal Engine 4 : Custom Gravity Plugin
 ----------------------------------------
 
 
-NB : This repository contains plugin files only . For the full project and more info , please visit this thread :
+For questions & feedback , please visit this thread :
 - [Unreal Engine forums thread link](https://goo.gl/mfmCbQ)
 
 ## What is it?

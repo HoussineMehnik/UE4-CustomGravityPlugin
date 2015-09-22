@@ -88,7 +88,7 @@ void UCustomMovementComponent::TickComponent(float DeltaTime, enum ELevelTick Ti
 	}
 
 	/* Local Variables */
-	const TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType = DebugDrawType;
+	const EDrawDebugTrace::Type DrawDebugType = bDebugIsEnabled ? DebugDrawType : EDrawDebugTrace::None;
 	const ECollisionChannel CollisionChannel = CapsuleComponent->GetCollisionObjectType();
 	const FVector TraceStart = CapsuleComponent->GetComponentLocation();
 	const float CapsuleHalfHeight = CapsuleComponent->GetScaledCapsuleHalfHeight();
@@ -96,6 +96,7 @@ void UCustomMovementComponent::TickComponent(float DeltaTime, enum ELevelTick Ti
 	FVector TraceEnd = TraceStart - CapsuleComponent->GetUpVector()* (CapsuleHalfHeight - ShapeRadius + GroundHitToleranceDistance + 1.0f);
 	FHitResult HitResult;
 	TArray<AActor*> ActorsToIgnore;
+
 	
 #pragma region Standing/Falling Definition
 

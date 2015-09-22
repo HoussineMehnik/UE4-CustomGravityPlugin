@@ -13,12 +13,10 @@
 	"Modules": [
 		{
 			"Name": "CustomGravityPlugin",
-			"Type": "Developer",
-			"LoadingPhase": "Default"
+			"Type" : "Runtime",
+			"LoadingPhase" : "PreDefault"
 		}
 	],
-	"EnabledByDefault": false,
-	"CanContainContent": false,
-	"IsBetaVersion": false,
-	"Installed": false
+	"EnabledByDefault": true,
+	"CanContainContent": false
 }

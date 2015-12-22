@@ -88,7 +88,7 @@ void UCustomMovementComponent::TickComponent(float DeltaTime, enum ELevelTick Ti
 	}
 
 	/* Local Variables */
-	const EDrawDebugTrace::Type DrawDebugType = bDebugIsEnabled ? DebugDrawType : EDrawDebugTrace::None;
+	const EDrawDebugTrace::Type DrawDebugType = bDebugIsEnabled ? DebugDrawType.GetValue() : EDrawDebugTrace::None;
 	const ECollisionChannel CollisionChannel = CapsuleComponent->GetCollisionObjectType();
 	const FVector TraceStart = CapsuleComponent->GetComponentLocation();
 	const float CapsuleHalfHeight = CapsuleComponent->GetScaledCapsuleHalfHeight();
@@ -97,12 +97,12 @@ void UCustomMovementComponent::TickComponent(float DeltaTime, enum ELevelTick Ti
 	FHitResult HitResult;
 	TArray<AActor*> ActorsToIgnore;
 
-	
+
 #pragma region Standing/Falling Definition
 
 	/** Testing if the Capsule is in air or standing on a walkable surface*/
 
-	UKismetSystemLibrary::SphereTraceSingle_NEW(this, TraceStart, TraceEnd, ShapeRadius, 
+	UKismetSystemLibrary::SphereTraceSingle_NEW(this, TraceStart, TraceEnd, ShapeRadius,
 		UEngineTypes::ConvertToTraceType(TraceChannel), true, ActorsToIgnore, DrawDebugType, HitResult, true);
 	bIsInAir = !HitResult.bBlockingHit;
 	TimeInAir = bIsInAir ? TimeInAir + DeltaTime : 0.0f;
@@ -167,13 +167,13 @@ void UCustomMovementComponent::TickComponent(float DeltaTime, enum ELevelTick Ti
 
 			if (TraceShape == ETraceShape::ETS_Line)
 			{
-				UKismetSystemLibrary::LineTraceSingle_NEW(this, TraceStart, TraceEnd, 
+				UKismetSystemLibrary::LineTraceSingle_NEW(this, TraceStart, TraceEnd,
 					UEngineTypes::ConvertToTraceType(TraceChannel), true, ActorsToIgnore, DrawDebugType, HitResult, true);
 			}
 			else if (TraceShape == ETraceShape::ETS_Sphere)
 			{
 				TraceEnd += CapsuleComponent->GetUpVector() * ShapeRadius;
-				UKismetSystemLibrary::SphereTraceSingle_NEW(this, TraceStart, TraceEnd, ShapeRadius, 
+				UKismetSystemLibrary::SphereTraceSingle_NEW(this, TraceStart, TraceEnd, ShapeRadius,
 					UEngineTypes::ConvertToTraceType(TraceChannel), true, ActorsToIgnore, DrawDebugType, HitResult, true);
 			}
 			else
@@ -260,7 +260,7 @@ void UCustomMovementComponent::TickComponent(float DeltaTime, enum ELevelTick Ti
 #pragma endregion
 
 
-	
+
 	/** Variables definition & initialization */
 	const FVector CurrentGravityDirection = CurrentGravityInfo.GravityDirection;
 	const bool bUseAccelerationChange = (CurrentGravityInfo.ForceMode == EForceMode::EFM_Acceleration);
@@ -395,7 +395,7 @@ bool UCustomMovementComponent::IsMovingOnGround() const
 	return !bIsInAir;
 }
 
-bool UCustomMovementComponent::IsFalling() const 
+bool UCustomMovementComponent::IsFalling() const
 {
 	return bIsInAir;
 }

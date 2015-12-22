@@ -2,9 +2,9 @@
 
 // 2015 , Mhousse1247 (mhousse.tutorials@gmail.com) .
 
-ACharacter* a;
-
 #include "CustomGravityPluginPrivatePCH.h"
+
+ACharacter* a;
 
 // Sets default values
 ACustomPawn::ACustomPawn(const FObjectInitializer& ObjectInitializer) :Super(ObjectInitializer)

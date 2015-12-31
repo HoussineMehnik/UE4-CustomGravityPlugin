@@ -33,7 +33,8 @@ Five Gravity Modes are allowed :
        
 ## Quick demonstration :
 
--Overview :
+- Overview :
+
 [![Youtube Video](http://img.youtube.com/vi/oLB28JvEQAg/0.jpg)](https://goo.gl/i8ye9u)
 
 - Gravity Rush Test :

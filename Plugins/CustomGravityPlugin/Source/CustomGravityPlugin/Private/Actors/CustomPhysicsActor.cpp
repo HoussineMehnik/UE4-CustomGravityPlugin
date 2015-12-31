@@ -23,4 +23,5 @@ ACustomPhysicsActor::ACustomPhysicsActor(const FObjectInitializer& ObjectInitial
 	{
 		GravityComponent->SetUpdatedComponent(MeshComponent);
 	}
+
 }

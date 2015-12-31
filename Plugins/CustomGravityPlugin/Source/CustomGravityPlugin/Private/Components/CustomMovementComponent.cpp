@@ -67,6 +67,7 @@ void UCustomMovementComponent::InitializeComponent()
 	TimeInAir = 0.0f;
 	bIsInAir = true;
 	bCanResetGravity = false;
+	LastWalkSpeed = MaxSpeed;
 }
 
 

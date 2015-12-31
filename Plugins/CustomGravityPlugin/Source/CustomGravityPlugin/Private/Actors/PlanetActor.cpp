@@ -67,8 +67,6 @@ void APlanetActor::Initialization()
 {
 	bSphereCollisionIsSelected = (CollisionType == ECollisionType::ECol_Sphere);
 
-	
-
 	if (CollisionType == ECollisionType::ECol_Mesh)
 	{
 		if (SphereCollision->IsRegistered())

@@ -5,6 +5,8 @@ Unreal Engine 4 : Custom Gravity Plugin
 For questions & feedback , please visit this thread :
 - [Unreal Engine forums thread link](https://goo.gl/mfmCbQ)
 
+- Source Path : "Plugins/CustomGravityPlugin/Source/CustomGravityPlugin"
+
 ## What is it?
 
 It's an Unreal Engine 4 plugin that allows the control gravity of :

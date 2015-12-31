@@ -1,11 +1,16 @@
 Unreal Engine 4 : Custom Gravity Plugin
 ----------------------------------------
 
+- Full Project  + Plugin(Source + Win64 binaries) with 4 example maps :
+       - GravityDash_Map
+       - GravityRoom_Map
+       - PlanetGravity_Map
+       - SurfaceGravity_Map
+       - 
+- Plugin Source Path : "Plugins/CustomGravityPlugin/Source/CustomGravityPlugin"
 
 For questions & feedback , please visit this thread :
 - [Unreal Engine forums thread link](https://goo.gl/mfmCbQ)
-
-- Source Path : "Plugins/CustomGravityPlugin/Source/CustomGravityPlugin"
 
 ## What is it?
 

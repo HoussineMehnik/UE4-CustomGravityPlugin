@@ -40,3 +40,7 @@ Five Gravity Modes are allowed :
 - Gravity Rush Test :
 
 [![Youtube Video](http://img.youtube.com/vi/YEaAqYEgKZU/0.jpg)](https://goo.gl/ccp0Ja)
+
+- 2D Gravity Mode :
+
+[![Youtube Video](http://img.youtube.com/vi/-k9l0mkUchg/0.jpg)](https://goo.gl/ccp0Ja)

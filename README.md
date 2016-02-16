@@ -6,6 +6,7 @@ Unreal Engine 4 : Custom Gravity Plugin
        - GravityRoom_Map
        - PlanetGravity_Map
        - SurfaceGravity_Map
+       - 2DGravity_Map
 
 - Plugin Source Path : "Plugins/CustomGravityPlugin/Source/CustomGravityPlugin"
 

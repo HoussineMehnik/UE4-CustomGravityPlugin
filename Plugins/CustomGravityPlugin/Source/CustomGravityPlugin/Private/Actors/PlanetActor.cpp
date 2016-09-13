@@ -18,13 +18,13 @@ APlanetActor::APlanetActor(const FObjectInitializer& Objectinititializer) :Super
 	RootComponent = PlanetRootComponent;
 
 	MeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComponent0"));
-	MeshComponent->AttachParent = PlanetRootComponent;
+	MeshComponent->SetupAttachment(RootComponent);
 	MeshComponent->SetCollisionProfileName("BlockAll");
 	MeshComponent->SetStaticMesh(PlanetMesh);
 	
 
 	SphereCollision = CreateDefaultSubobject<USphereComponent>(TEXT("SphereCollision0"));
-	SphereCollision->AttachParent = PlanetRootComponent;
+	SphereCollision->SetupAttachment(RootComponent);
 	SphereCollision->SetVisibility(true);
 	SphereCollision->SetHiddenInGame(true);
 	SphereCollision->SetCollisionProfileName("BlockAll");

@@ -1,22 +1,25 @@
 {
-	"FileVersion": 3,
-	"Version": 1,
-	"VersionName": "1.0",
-	"FriendlyName": "Custom Gravity Plugin",
-	"Description": "Custom Gravity Plugin",
-	"Category": "Other",
-	"CreatedBy": "Elhoussine Mehnik (Mhousse1247)",
-	"CreatedByURL": "https://twitter.com/HoussineMehnik",
-	"DocsURL": "",
-	"MarketplaceURL": "",
-	"SupportURL": "",
-	"Modules": [
+	"FileVersion" : 3,
+	"Version" : 1,
+	"VersionName" : "1.0",
+	"FriendlyName" : "Custom Gravity Plugin",
+	"Description" : "Custom Gravity Plugin",
+	"Category" : "Other",
+	"CreatedBy" : "Elhoussine Mehnik.",
+	"CreatedByURL" : "https://twitter.com/HoussineMehnik",
+	"DocsURL" : "",
+	"MarketplaceURL" : "",
+	"SupportURL" : "",
+	"EnabledByDefault" : true,
+	"CanContainContent" : false,
+	"IsBetaVersion" : false,
+	"Installed" : true,
+	"Modules" :
+	[
 		{
 			"Name": "CustomGravityPlugin",
 			"Type" : "Runtime",
 			"LoadingPhase" : "PreDefault"
 		}
-	],
-	"EnabledByDefault": true,
-	"CanContainContent": false
+	]
 }

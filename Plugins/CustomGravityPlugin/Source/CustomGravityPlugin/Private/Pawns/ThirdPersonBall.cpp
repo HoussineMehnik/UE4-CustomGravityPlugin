@@ -8,7 +8,7 @@ AThirdPersonBall::AThirdPersonBall(const FObjectInitializer& ObjectInitializer) 
 {
 
 	Ball = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BallMesh0"));
-	Ball->AttachTo(RootComponent);
+	Ball->SetupAttachment(RootComponent);
 	Ball->SetCollisionProfileName(TEXT("NoCollision"));
 
 	const float Radius = 50.0f;

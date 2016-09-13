@@ -31,7 +31,7 @@ UCustomMovementComponent::UCustomMovementComponent()
 
 	SurfaceBasedGravityInfo = FGravityInfo();
 	TraceShape = ETraceShape::ETS_Sphere;
-	TraceChannel = ECollisionChannel::ECC_Pawn;
+	TraceChannel = ECollisionChannel::ECC_Visibility;
 	TraceShapeScale = 0.75f;
 	bUseCapsuleHit = false;
 
@@ -98,12 +98,12 @@ void UCustomMovementComponent::TickComponent(float DeltaTime, enum ELevelTick Ti
 	FHitResult HitResult;
 	TArray<AActor*> ActorsToIgnore;
 
-
+	
 #pragma region Standing/Falling Definition
 
 	/** Testing if the Capsule is in air or standing on a walkable surface*/
 
-	UKismetSystemLibrary::SphereTraceSingle_NEW(this, TraceStart, TraceEnd, ShapeRadius,
+	UKismetSystemLibrary::SphereTraceSingle_NEW(this, TraceStart, TraceEnd, ShapeRadius, 
 		UEngineTypes::ConvertToTraceType(TraceChannel), true, ActorsToIgnore, DrawDebugType, HitResult, true);
 	bIsInAir = !HitResult.bBlockingHit;
 	TimeInAir = bIsInAir ? TimeInAir + DeltaTime : 0.0f;
@@ -122,9 +122,9 @@ void UCustomMovementComponent::TickComponent(float DeltaTime, enum ELevelTick Ti
 	{
 		CapsuleComponent->SetLinearDamping(0.01f);
 	}
-	else if (CapsuleComponent->GetLinearDamping() != 1.0f && !bIsInAir)
+	else if (CapsuleComponent->GetLinearDamping() != 0.5f && !bIsInAir)
 	{
-		CapsuleComponent->SetLinearDamping(1.0f);
+		CapsuleComponent->SetLinearDamping(0.5f);
 	}
 	else if (TimeInAir > 1.0f && PlanetActor != nullptr && !bIsJumping)
 	{
@@ -138,14 +138,17 @@ void UCustomMovementComponent::TickComponent(float DeltaTime, enum ELevelTick Ti
 
 	if (bResetVelocityOnGravitySwitch)
 	{
-		if (bIsInAir && bCanResetGravity && TimeInAir >= GravitySwitchDelay)
+		if (!bRequestImmediateUpdate)
 		{
-			StopMovementImmediately();
-			bCanResetGravity = false;
-		}
-		else if (!bIsInAir && !bCanResetGravity)
-		{
-			bCanResetGravity = true;
+			if (bIsInAir && bCanResetGravity && TimeInAir >= GravitySwitchDelay)
+			{
+				StopMovementImmediately();
+				bCanResetGravity = false;
+			}
+			else if (!bIsInAir && !bCanResetGravity)
+			{
+				bCanResetGravity = true;
+			}
 		}
 	}
 
@@ -168,14 +171,14 @@ void UCustomMovementComponent::TickComponent(float DeltaTime, enum ELevelTick Ti
 
 			if (TraceShape == ETraceShape::ETS_Line)
 			{
-				UKismetSystemLibrary::LineTraceSingle_NEW(this, TraceStart, TraceEnd,
+				UKismetSystemLibrary::LineTraceSingle_NEW(this, TraceStart, TraceEnd, 
 					UEngineTypes::ConvertToTraceType(TraceChannel), true, ActorsToIgnore, DrawDebugType, HitResult, true);
 			}
 			else if (TraceShape == ETraceShape::ETS_Sphere)
 			{
 				TraceEnd += CapsuleComponent->GetUpVector() * ShapeRadius;
-				UKismetSystemLibrary::SphereTraceSingle_NEW(this, TraceStart, TraceEnd, ShapeRadius,
-					UEngineTypes::ConvertToTraceType(TraceChannel), true, ActorsToIgnore, DrawDebugType, HitResult, true);
+				UKismetSystemLibrary::SphereTraceSingle_NEW(this, TraceStart, TraceEnd, ShapeRadius, UEngineTypes::ConvertToTraceType( TraceChannel)
+					, true, ActorsToIgnore, DrawDebugType, HitResult, true);
 			}
 			else
 			{
@@ -203,8 +206,13 @@ void UCustomMovementComponent::TickComponent(float DeltaTime, enum ELevelTick Ti
 		(bIsInAir && FallingVerticalOrientation == EVerticalOrientation::EVO_GravityDirection))
 	{
 
-		if (!bIsInAir || TimeInAir > GravitySwitchDelay)
+		if (bRequestImmediateUpdate || !bIsInAir || TimeInAir > GravitySwitchDelay)
 		{
+			if (bRequestImmediateUpdate == true)
+			{
+				CapsuleComponent->SetLinearDamping(0.01f);
+				bRequestImmediateUpdate = false;
+			}
 
 			switch (CustomGravityType)
 			{
@@ -261,7 +269,7 @@ void UCustomMovementComponent::TickComponent(float DeltaTime, enum ELevelTick Ti
 #pragma endregion
 
 
-
+	
 	/** Variables definition & initialization */
 	const FVector CurrentGravityDirection = CurrentGravityInfo.GravityDirection;
 	const bool bUseAccelerationChange = (CurrentGravityInfo.ForceMode == EForceMode::EFM_Acceleration);
@@ -272,6 +280,10 @@ void UCustomMovementComponent::TickComponent(float DeltaTime, enum ELevelTick Ti
 
 	const float InterpSpeed = CurrentOrientationInfo.RotationInterpSpeed;
 	const bool bOrientationIsInstant = CurrentOrientationInfo.bIsInstant;
+
+
+	/************************************/
+	/****************************************/
 
 	/* Update Rotation : Orient Capsule's up vector to have the same direction as -gravityDirection */
 	UpdateCapsuleRotation(DeltaTime, -CurrentGravityDirection, bOrientationIsInstant, InterpSpeed);
@@ -396,7 +408,7 @@ bool UCustomMovementComponent::IsMovingOnGround() const
 	return !bIsInAir;
 }
 
-bool UCustomMovementComponent::IsFalling() const
+bool UCustomMovementComponent::IsFalling() const 
 {
 	return bIsInAir;
 }
@@ -443,6 +455,12 @@ void UCustomMovementComponent::EnableDebuging()
 void UCustomMovementComponent::DisableDebuging()
 {
 	bDebugIsEnabled = false;
+}
+
+
+void UCustomMovementComponent::RequestGavityImmediateUpdate()
+{
+	bRequestImmediateUpdate = true;
 }
 
 void UCustomMovementComponent::SetComponentOwner(class ACustomPawn* Owner)

@@ -20,12 +20,12 @@ APhysicsBallPawn::APhysicsBallPawn()
 
 	// Create a Spring Root Component attached to the root (ball)
 	SpringRoot = CreateDefaultSubobject<USceneComponent>(TEXT("SpringRoot0"));
-	SpringRoot->AttachTo(RootComponent);
+	SpringRoot->SetupAttachment(RootComponent);
 	SpringRoot->SetAbsolute(false, true, true);
 
 	// Create a camera boom attached to the Spring Root Component
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm0"));
-	SpringArm->AttachTo(SpringRoot);
+	SpringArm->SetupAttachment(SpringRoot);
 	SpringArm->bDoCollisionTest = false;
 	SpringArm->TargetArmLength = 1200.f;
 	SpringArm->bEnableCameraLag = false;
@@ -38,7 +38,7 @@ APhysicsBallPawn::APhysicsBallPawn()
 
 	// Create a camera and attach to boom
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera0"));
-	Camera->AttachTo(SpringArm, USpringArmComponent::SocketName);
+	Camera->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
 	Camera->bUsePawnControlRotation = false; // We don't want the controller rotating the camera
 
 	// Create a Custom gravity Component

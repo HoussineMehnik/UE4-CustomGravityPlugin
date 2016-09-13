@@ -12,15 +12,15 @@ AFirstPersonCharacter::AFirstPersonCharacter(const FObjectInitializer& ObjectIni
 
 	GetCamera()->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
 
-	GetMesh()->AttachTo(GetCamera());
+	GetMesh()->SetupAttachment(GetCamera());
 	GetMesh()->SetRelativeLocation(FVector(-0.5f, -2.5f, -155.0f));
 
 	GunMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("GunMesh0"));
 	GunSocketName = TEXT("GripPoint");
-	GunMesh->AttachTo(GetMesh(), GunSocketName, EAttachLocation::SnapToTargetIncludingScale);
+	GunMesh->SetupAttachment(GetMesh(), GunSocketName );
 
 	Shooter = CreateDefaultSubobject<USceneComponent>(TEXT("Shooter0"));
-	Shooter->AttachTo(GetCamera());
+	Shooter->SetupAttachment(GetCamera());
 	Shooter->SetRelativeLocation(FVector(100.0f, 25.0f, 0.0f));
 
 }
@@ -33,7 +33,7 @@ void AFirstPersonCharacter::PostEditChangeProperty(FPropertyChangedEvent& Proper
 
 	if (GunMesh == NULL){ return; }
 
-	GunMesh->AttachTo(GetMesh(), GunSocketName, EAttachLocation::SnapToTargetIncludingScale);
+	GunMesh->SetupAttachment(GetMesh(),GunSocketName);
 }
 #endif // WITH_EDITOR
 

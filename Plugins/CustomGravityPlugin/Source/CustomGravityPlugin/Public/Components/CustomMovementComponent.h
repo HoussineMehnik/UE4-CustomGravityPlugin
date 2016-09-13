@@ -268,6 +268,9 @@ public:
 	UPROPERTY(Category = "Custom Movement Component", VisibleInstanceOnly, BlueprintReadOnly)
 		FHitResult CapsuleHitResult;
 
+	/* Change Immediately Gravity Info */
+	UFUNCTION(BlueprintCallable, Category = "Pawn|Components|CustomMovementComponent")
+		void RequestGavityImmediateUpdate();
 
 	/** Update the custom pawn that owns this component. */
 	UFUNCTION(BlueprintCallable, Category = "Pawn|Components|CustomMovementComponent")
@@ -368,5 +371,7 @@ private:
 	bool bIsSprinting;
 
 	bool bIsJumping;
+
+	bool bRequestImmediateUpdate;
 
 };

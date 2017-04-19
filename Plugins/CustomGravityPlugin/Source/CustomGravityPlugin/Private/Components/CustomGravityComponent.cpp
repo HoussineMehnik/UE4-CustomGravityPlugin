@@ -1,6 +1,7 @@
-// Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
+// Copyright 2015 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
+//******************* http://ue4resources.com/ *********************//
 
-// 2015 , Mhousse1247 (mhousse.tutorials@gmail.com) .
+
 
 #include "CustomGravityPluginPrivatePCH.h"
 #include "Kismet/KismetSystemLibrary.h"
@@ -11,9 +12,6 @@ UCustomGravityComponent::UCustomGravityComponent()
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
-
-	// BeginPlay virtual void can be called
-	bWantsBeginPlay = true;
 
 	// InitializeComponent virtual void can be called
 	bWantsInitializeComponent = true;

@@ -1,4 +1,5 @@
-// Some copyright should be here...
+// Copyright 2015 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
+//******************* http://ue4resources.com/ *********************//
 
 using UnrealBuildTool;
 

@@ -1,6 +1,5 @@
-// Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
-
-// 2015 , Mhousse1247 (mhousse.tutorials@gmail.com) .
+// Copyright 2015 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
+//******************* http://ue4resources.com/ *********************//
 
 #include "CustomGravityPluginPrivatePCH.h"
 
@@ -103,7 +102,7 @@ void UCustomMovementComponent::TickComponent(float DeltaTime, enum ELevelTick Ti
 
 	/** Testing if the Capsule is in air or standing on a walkable surface*/
 
-	UKismetSystemLibrary::SphereTraceSingle_NEW(this, TraceStart, TraceEnd, ShapeRadius, 
+	UKismetSystemLibrary::SphereTraceSingle(this, TraceStart, TraceEnd, ShapeRadius, 
 		UEngineTypes::ConvertToTraceType(TraceChannel), true, ActorsToIgnore, DrawDebugType, HitResult, true);
 	bIsInAir = !HitResult.bBlockingHit;
 	TimeInAir = bIsInAir ? TimeInAir + DeltaTime : 0.0f;
@@ -171,13 +170,13 @@ void UCustomMovementComponent::TickComponent(float DeltaTime, enum ELevelTick Ti
 
 			if (TraceShape == ETraceShape::ETS_Line)
 			{
-				UKismetSystemLibrary::LineTraceSingle_NEW(this, TraceStart, TraceEnd, 
+				UKismetSystemLibrary::LineTraceSingle(this, TraceStart, TraceEnd, 
 					UEngineTypes::ConvertToTraceType(TraceChannel), true, ActorsToIgnore, DrawDebugType, HitResult, true);
 			}
 			else if (TraceShape == ETraceShape::ETS_Sphere)
 			{
 				TraceEnd += CapsuleComponent->GetUpVector() * ShapeRadius;
-				UKismetSystemLibrary::SphereTraceSingle_NEW(this, TraceStart, TraceEnd, ShapeRadius, UEngineTypes::ConvertToTraceType( TraceChannel)
+				UKismetSystemLibrary::SphereTraceSingle(this, TraceStart, TraceEnd, ShapeRadius, UEngineTypes::ConvertToTraceType( TraceChannel)
 					, true, ActorsToIgnore, DrawDebugType, HitResult, true);
 			}
 			else
@@ -354,6 +353,19 @@ void UCustomMovementComponent::StopMovementImmediately()
 void UCustomMovementComponent::CapsuleHited(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
 {
 
+	CapsuleHitResult = Hit;
+
+	const float FallingSpeed = FMath::Abs(GetFallingSpeed());
+
+	if (FallingSpeed > 100.0f)
+	{
+		FVector CurrentVelocity = CapsuleComponent->GetComponentVelocity();
+		CurrentVelocity = CapsuleComponent->GetComponentTransform().InverseTransformVector(CurrentVelocity);
+		CurrentVelocity.Z = 0.0f;
+		CurrentVelocity = CapsuleComponent->GetComponentTransform().TransformVector(CurrentVelocity);
+		CapsuleComponent->SetPhysicsLinearVelocity(CurrentVelocity);
+	}
+
 	const float OnGroundHitDot = FVector::DotProduct(HitNormal, CapsuleComponent->GetUpVector());
 
 	if (OnGroundHitDot > 0.75f)
@@ -361,7 +373,6 @@ void UCustomMovementComponent::CapsuleHited(class UPrimitiveComponent* MyComp, c
 		bIsJumping = false;
 	}
 
-	CapsuleHitResult = Hit;
 
 	if (!bEnablePhysicsInteraction)
 	{

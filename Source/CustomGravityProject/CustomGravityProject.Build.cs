@@ -4,8 +4,8 @@ using UnrealBuildTool;
 
 public class CustomGravityProject : ModuleRules
 {
-	public CustomGravityProject(TargetInfo Target)
-	{
+	public CustomGravityProject(ReadOnlyTargetRules Target) : base(Target)
+    {
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });

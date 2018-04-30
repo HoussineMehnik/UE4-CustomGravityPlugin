@@ -5,21 +5,10 @@ using System.Collections.Generic;
 
 public class CustomGravityProjectTarget : TargetRules
 {
-	public CustomGravityProjectTarget(TargetInfo Target)
+    public CustomGravityProjectTarget(TargetInfo Target) : base(Target)
 	{
-		Type = TargetType.Game;
-	}
+        Type = TargetType.Game;
 
-	//
-	// TargetRules interface.
-	//
-
-	public override void SetupBinaries(
-		TargetInfo Target,
-		ref List<UEBuildBinaryConfiguration> OutBuildBinaryConfigurations,
-		ref List<string> OutExtraModuleNames
-		)
-	{
-		OutExtraModuleNames.AddRange( new string[] { "CustomGravityProject" } );
-	}
+        ExtraModuleNames.AddRange(new string[] { "CustomGravityProject" });
+    }
 }

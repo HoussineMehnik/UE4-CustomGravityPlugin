@@ -299,9 +299,35 @@ void UCustomMovementComponent::UpdateCapsuleRotation(float DeltaTime, const FVec
 	const FQuat DeltaQuat = FQuat::FindBetween(CapsuleUp, TargetUpVector);
 	const FQuat TargetQuat = DeltaQuat * CapsuleComponent->GetComponentRotation().Quaternion();
 
-	CurrentCapsuleRotation = bInstantRot ? TargetQuat.Rotator() : FMath::RInterpTo(CurrentCapsuleRotation, TargetQuat.Rotator(), DeltaTime, RotationSpeed);
+	if (bInstantRot)
+	{
+		CapsuleComponent->SetWorldRotation(TargetQuat);
+	}
+	else
+	{
+		switch (OrientationSettings.InterpolationMode)
+		{
+		case EOrientationInterpolationMode::OIM_RInterpTo:
+		{
+			CapsuleComponent->SetWorldRotation(
+				FMath::RInterpTo(CurrentCapsuleRotation, TargetQuat.Rotator(), DeltaTime, RotationSpeed));
+			break;
+		}
+		case EOrientationInterpolationMode::OIM_Slerp:
+		{
+			CapsuleComponent->SetWorldRotation(
+				FQuat::Slerp(CurrentCapsuleRotation.Quaternion(), TargetQuat, DeltaTime* RotationSpeed));
+			break;
+		}
+		default:
+		{
+			CapsuleComponent->SetWorldRotation(TargetQuat);
+			break;
+		}
+		}
+	}
 
-	CapsuleComponent->SetWorldRotation(CurrentCapsuleRotation);
+	CurrentCapsuleRotation = CapsuleComponent->GetComponentRotation();
 }
 
 

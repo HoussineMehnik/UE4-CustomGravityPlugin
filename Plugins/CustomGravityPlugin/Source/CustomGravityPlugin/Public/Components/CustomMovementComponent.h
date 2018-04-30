@@ -9,6 +9,17 @@
 
 
 
+UENUM(BlueprintType)
+namespace EOrientationInterpolationMode
+{
+	enum  Type
+	{
+		OIM_RInterpTo 	UMETA(DisplayName = "Rotator Interpolation"),
+		OIM_Slerp	UMETA(DisplayName = "Quaternion Slerp")
+	};
+}
+
+
 
 UENUM(BlueprintType)
 namespace EVerticalOrientation
@@ -41,10 +52,10 @@ struct FOrientationInfo
 	GENERATED_BODY()
 public:
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Orientation Settings")
 		bool bIsInstant;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Orientation Settings")
 		float RotationInterpSpeed;
 
 	FOrientationInfo()
@@ -67,17 +78,27 @@ struct FOrientationSettings
 	GENERATED_BODY()
 public:
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Orientation Settings")
+		TEnumAsByte<EOrientationInterpolationMode::Type> InterpolationMode;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Orientation Settings")
 		FOrientationInfo DefaultGravity;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Orientation Settings")
 		FOrientationInfo PointGravity;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Orientation Settings")
 		FOrientationInfo CustomGravity;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Orientation Settings")
 		FOrientationInfo GlobalCustomGravity;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Orientation Settings")
 		FOrientationInfo SurfaceBasedGravity;
+
+	FOrientationSettings()
+		: InterpolationMode(EOrientationInterpolationMode::OIM_Slerp)
+	{
+
+	}
 };
+
 
 
 

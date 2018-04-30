@@ -122,7 +122,7 @@ void APhysicsBallPawn::AddRightTorque(float ScaleValue)
 	const FVector RightDirection = FVector::VectorPlaneProject(CameraRight, SpringRootUp);
 	const FVector Torque = RightDirection * ScaleValue * RollTorque * -1.f;
 
-	Ball->AddTorque(Torque);
+	Ball->AddTorqueInRadians(Torque);
 }
 
 
@@ -133,7 +133,7 @@ void APhysicsBallPawn::AddForwardTorque(float ScaleValue)
 	const FVector ForwardDirection = FVector::VectorPlaneProject(CameraForward, SpringRootUp);
 	const FVector Torque = ForwardDirection *  ScaleValue * RollTorque;
 
-	Ball->AddTorque(Torque);
+	Ball->AddTorqueInRadians(Torque);
 }
 
 

@@ -5,8 +5,8 @@ using UnrealBuildTool;
 
 public class CustomGravityPlugin : ModuleRules
 {
-	public CustomGravityPlugin(TargetInfo Target)
-	{
+	public CustomGravityPlugin(ReadOnlyTargetRules Target) : base(Target)
+    {
 		
 		PublicIncludePaths.AddRange(
 			new string[] {

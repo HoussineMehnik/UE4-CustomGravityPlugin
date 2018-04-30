@@ -5,21 +5,11 @@ using System.Collections.Generic;
 
 public class CustomGravityProjectEditorTarget : TargetRules
 {
-	public CustomGravityProjectEditorTarget(TargetInfo Target)
-	{
-		Type = TargetType.Editor;
-	}
 
-	//
-	// TargetRules interface.
-	//
-
-	public override void SetupBinaries(
-		TargetInfo Target,
-		ref List<UEBuildBinaryConfiguration> OutBuildBinaryConfigurations,
-		ref List<string> OutExtraModuleNames
-		)
+    public CustomGravityProjectEditorTarget(TargetInfo Target) : base(Target)
 	{
-		OutExtraModuleNames.AddRange( new string[] { "CustomGravityProject" } );
-	}
+        Type = TargetType.Editor;
+
+        ExtraModuleNames.AddRange(new string[] { "CustomGravityProject" });
+    }
 }

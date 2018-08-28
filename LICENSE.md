@@ -1,7 +1,6 @@
 MIT License
 
-// Copyright 2015 Elhoussine Mehnik (Mhousse1247). 
-//******************* http://ue4resources.com/ *********************//
+Copyright (c) 2018 Elhoussine Mehnik
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

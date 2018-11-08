@@ -59,7 +59,7 @@ ACustomPawn::ACustomPawn(const FObjectInitializer& ObjectInitializer) :Super(Obj
 		PawnMesh->bAffectDynamicIndirectLighting = true;
 		PawnMesh->PrimaryComponentTick.TickGroup = TG_PrePhysics;
 		PawnMesh->SetCollisionProfileName(TEXT("CharacterMesh"));
-		PawnMesh->bGenerateOverlapEvents = false;
+		PawnMesh->SetGenerateOverlapEvents(false);
 		PawnMesh->SetNotifyRigidBodyCollision(false);
 		PawnMesh->SetupAttachment(CapsuleComponent);
 	}

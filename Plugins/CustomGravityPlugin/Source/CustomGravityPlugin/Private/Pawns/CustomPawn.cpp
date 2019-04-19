@@ -54,7 +54,7 @@ ACustomPawn::ACustomPawn(const FObjectInitializer& ObjectInitializer) :Super(Obj
 	PawnMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("PawnMesh0"));
 	if (PawnMesh)
 	{
-		PawnMesh->MeshComponentUpdateFlag = EMeshComponentUpdateFlag::AlwaysTickPose;
+		PawnMesh->VisibilityBasedAnimTickOption = EVisibilityBasedAnimTickOption::AlwaysTickPose;
 		PawnMesh->bCastDynamicShadow = true;
 		PawnMesh->bAffectDynamicIndirectLighting = true;
 		PawnMesh->PrimaryComponentTick.TickGroup = TG_PrePhysics;

@@ -2,6 +2,10 @@
 //******************* http://ue4resources.com/ *********************//
 
 #pragma once
+#include "Runtime/Engine/Classes/GameFramework/SpringArmComponent.h"
+#include "Runtime/Engine/Classes/Camera/CameraComponent.h"
+#include "Runtime/Engine/Classes/Components/ArrowComponent.h"
+#include "Runtime/Engine/Classes/Components/SphereComponent.h"
 #include "CustomPawn.generated.h"
 
 

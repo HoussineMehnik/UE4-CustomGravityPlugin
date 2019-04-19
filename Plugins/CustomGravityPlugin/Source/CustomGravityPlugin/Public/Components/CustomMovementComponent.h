@@ -3,9 +3,10 @@
 
 #pragma once
 #include "Kismet/KismetSystemLibrary.h"
+#include "Runtime/Engine/Classes/GameFramework/FloatingPawnMovement.h"
+#include "Runtime/Engine/Classes/GameFramework/CharacterMovementComponent.h"
+#include "Runtime/Engine/Classes/Components/CapsuleComponent.h"
 #include "CustomMovementComponent.generated.h"
-
-
 
 
 

@@ -16,7 +16,7 @@ AThirdPersonBall::AThirdPersonBall(const FObjectInitializer& ObjectInitializer) 
 	GetCapsuleComponent()->GetBodyInstance()->COMNudge = FVector(0.0f, 0.0f, -Radius);
 
 	// Initialization
-	Ball->bAbsoluteRotation = true;
+	Ball->SetUsingAbsoluteRotation(true);
 	CurrentAngle = 0.f;
 	BallRotationRate = 0.5f;
 	MinVelocityToRotateBall = 10.0f;

@@ -220,7 +220,7 @@ void ACustomPawn::AddCameraPitchInput(float UpdateRate /*= 1.0f*/, float ScaleVa
 {
 	if (SpringArm != NULL)
 	{
-		FRotator CameraRelativeRot = SpringArm->RelativeRotation;
+		FRotator CameraRelativeRot = SpringArm->GetRelativeRotation();
 		float CameraNewPitch = FMath::ClampAngle(CameraRelativeRot.Pitch + ScaleValue * UpdateRate, CameraPitchMin, CameraPitchMax);
 		CameraRelativeRot.Pitch = CameraNewPitch;
 		SpringArm->SetRelativeRotation(CameraRelativeRot);

@@ -3,7 +3,7 @@
 
 
 #pragma once
-
+#include "Kismet/BlueprintFunctionLibrary.h"
 #include "CustomGravityManager.generated.h"
 
 /** Enumerates available custom gravity types. */

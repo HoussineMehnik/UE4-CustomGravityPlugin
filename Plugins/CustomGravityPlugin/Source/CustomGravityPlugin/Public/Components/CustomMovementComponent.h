@@ -3,6 +3,8 @@
 
 #pragma once
 #include "Kismet/KismetSystemLibrary.h"
+#include "GameFramework/FloatingPawnMovement.h"
+#include "GameFramework/CharacterMovementComponent.h"
 #include "CustomMovementComponent.generated.h"
 
 

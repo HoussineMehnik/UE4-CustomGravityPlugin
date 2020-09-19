@@ -6,6 +6,7 @@
 
 #pragma once
 #include "CustomGravityManager.h"
+#include "Components/ActorComponent.h"
 #include "CustomGravityComponent.generated.h"
 
 

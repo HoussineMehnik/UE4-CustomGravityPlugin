@@ -5,6 +5,7 @@
 #pragma once
 
 #include "CustomGravityManager.h"
+#include "Components/SphereComponent.h"
 #include "PlanetActor.generated.h"
 
 UENUM(BlueprintType)

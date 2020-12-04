@@ -1,7 +1,10 @@
-// Copyright 2015 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
+// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
 //******************* http://ue4resources.com/ *********************//
 
 #pragma once
+
+
+#include "Pawns/CustomPawn.h"
 #include "ThirdPersonCharacter.generated.h"
 
 

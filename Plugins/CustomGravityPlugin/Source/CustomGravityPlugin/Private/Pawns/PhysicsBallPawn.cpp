@@ -1,8 +1,17 @@
-// Copyright 2015 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
+// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
 //******************* http://ue4resources.com/ *********************//
 
 
-#include "CustomGravityPluginPrivatePCH.h"
+#include "Pawns/PhysicsBallPawn.h"
+#include <GameFramework/SpringArmComponent.h>
+#include <Components/SceneComponent.h>
+#include "Components/CustomGravityComponent.h"
+#include <Components/StaticMeshComponent.h>
+#include <Engine/CollisionProfile.h>
+#include <Camera/CameraComponent.h>
+
+
+
 
 APhysicsBallPawn::APhysicsBallPawn()
 {
@@ -87,7 +96,7 @@ void APhysicsBallPawn::AddCameraPitchInput(float UpdateRate /*= 1.0f*/, float Sc
 {
 	if (SpringArm != NULL)
 	{
-		FRotator CameraRelativeRot = SpringArm->RelativeRotation;
+		FRotator CameraRelativeRot = SpringArm->GetRelativeRotation();
 
 		float CameraNewPitch = FMath::ClampAngle(CameraRelativeRot.Pitch + ScaleValue * UpdateRate, CameraPitchMin, CameraPitchMax);
 
@@ -114,6 +123,11 @@ void APhysicsBallPawn::NotifyHit(class UPrimitiveComponent* MyComp, class AActor
 	bCanJump = true;
 }
 
+
+float APhysicsBallPawn::GetBallMass() const
+{
+	return Ball->BodyInstance.GetBodyMass();
+}
 
 void APhysicsBallPawn::AddRightTorque(float ScaleValue)
 {

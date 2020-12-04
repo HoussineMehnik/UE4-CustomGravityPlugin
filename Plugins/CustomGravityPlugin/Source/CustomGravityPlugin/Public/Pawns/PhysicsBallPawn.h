@@ -1,7 +1,10 @@
-// Copyright 2015 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
+// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
 //******************* http://ue4resources.com/ *********************//
 
 #pragma once
+
+
+#include "GameFramework/Pawn.h"
 #include "PhysicsBallPawn.generated.h"
 
 UCLASS()
@@ -107,5 +110,5 @@ public:
 	/** Returns Gravity Component subobject **/
 	FORCEINLINE class UCustomGravityComponent* GetGravityComponent() const { return  GravityComponent; }
 	/** Returns Ball Mass */
-	FORCEINLINE float GetBallMass() const { return Ball->BodyInstance.GetBodyMass(); }
+	float GetBallMass() const;
 };

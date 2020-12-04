@@ -1,9 +1,10 @@
-// Copyright 2015 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
+// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
 //******************* http://ue4resources.com/ *********************//
 
 
 #pragma once
 
+#include "Kismet/BlueprintFunctionLibrary.h"
 #include "CustomGravityManager.generated.h"
 
 /** Enumerates available custom gravity types. */
@@ -36,7 +37,7 @@ namespace EForceMode
 USTRUCT(BlueprintType)
 struct  CUSTOMGRAVITYPLUGIN_API FGravityInfo
 {
-	GENERATED_BODY()
+	GENERATED_USTRUCT_BODY()
 
 public:
 

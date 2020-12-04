@@ -1,8 +1,9 @@
-// Copyright 2015 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
+// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
 //******************* http://ue4resources.com/ *********************//
 
 #pragma once
 #include "Kismet/KismetSystemLibrary.h"
+#include "GameFramework/FloatingPawnMovement.h"
 #include "CustomMovementComponent.generated.h"
 
 
@@ -49,7 +50,7 @@ namespace ETraceShape
 USTRUCT(BlueprintType)
 struct FOrientationInfo
 {
-	GENERATED_BODY()
+	GENERATED_USTRUCT_BODY()
 public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Orientation Settings")
@@ -75,7 +76,7 @@ public:
 USTRUCT(BlueprintType)
 struct FOrientationSettings
 {
-	GENERATED_BODY()
+	GENERATED_USTRUCT_BODY()
 public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Orientation Settings")
@@ -150,9 +151,6 @@ public:
 	virtual void DoStopSprint();
 	virtual void EnableDebuging();
 	virtual void DisableDebuging();
-
-
-	UCharacterMovementComponent*  a;
 
 	/**
 	*Custom Gravity Scale.

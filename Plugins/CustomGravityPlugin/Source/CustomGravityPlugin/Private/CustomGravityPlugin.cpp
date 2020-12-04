@@ -1,8 +1,9 @@
-// Copyright 2015 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
+// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
 //******************* http://ue4resources.com/ *********************//
 
+#include "CustomGravityPlugin.h"
 
-#include "CustomGravityPluginPrivatePCH.h"
+
 
 
 

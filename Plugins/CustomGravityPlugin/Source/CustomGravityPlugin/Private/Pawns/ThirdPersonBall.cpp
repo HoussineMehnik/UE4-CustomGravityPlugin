@@ -1,8 +1,15 @@
-// Copyright 2015 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
+// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
 //******************* http://ue4resources.com/ *********************//
 
 
-#include "CustomGravityPluginPrivatePCH.h"
+#include "Pawns/ThirdPersonBall.h"
+#include <Components/CapsuleComponent.h>
+#include <Components/PrimitiveComponent.h>
+#include <PhysicsEngine/BodyInstance.h>
+#include <Components/StaticMeshComponent.h>
+#include "Pawns/CustomPawn.h"
+#include "Components/CustomMovementComponent.h"
+
 
 AThirdPersonBall::AThirdPersonBall(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
@@ -16,7 +23,7 @@ AThirdPersonBall::AThirdPersonBall(const FObjectInitializer& ObjectInitializer) 
 	GetCapsuleComponent()->GetBodyInstance()->COMNudge = FVector(0.0f, 0.0f, -Radius);
 
 	// Initialization
-	Ball->bAbsoluteRotation = true;
+	Ball->SetUsingAbsoluteRotation(true);
 	CurrentAngle = 0.f;
 	BallRotationRate = 0.5f;
 	MinVelocityToRotateBall = 10.0f;

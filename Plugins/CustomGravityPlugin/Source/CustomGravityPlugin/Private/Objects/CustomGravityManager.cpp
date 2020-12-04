@@ -1,10 +1,11 @@
-// Copyright 2015 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
+// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
 //******************* http://ue4resources.com/ *********************//
 
 
+#include "Objects/CustomGravityManager.h"
 
 
-#include "CustomGravityPluginPrivatePCH.h"
+
 
 //Initialization
 FGravityInfo UCustomGravityManager::GlobalCustomGravityInfo = FGravityInfo();

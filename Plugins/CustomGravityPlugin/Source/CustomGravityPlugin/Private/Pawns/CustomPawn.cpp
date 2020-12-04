@@ -1,11 +1,15 @@
-// Copyright 2015 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
+// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
 //******************* http://ue4resources.com/ *********************//
 
 
+#include "Pawns/CustomPawn.h"
+#include <Components/CapsuleComponent.h>
+#include <GameFramework/SpringArmComponent.h>
+#include <Camera/CameraComponent.h>
+#include <Components/SkeletalMeshComponent.h>
+#include <Components/SkinnedMeshComponent.h>
+#include <Components/ArrowComponent.h>
 
-ACharacter* a;
-
-#include "CustomGravityPluginPrivatePCH.h"
 
 // Sets default values
 ACustomPawn::ACustomPawn(const FObjectInitializer& ObjectInitializer) :Super(ObjectInitializer)
@@ -54,7 +58,7 @@ ACustomPawn::ACustomPawn(const FObjectInitializer& ObjectInitializer) :Super(Obj
 	PawnMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("PawnMesh0"));
 	if (PawnMesh)
 	{
-		PawnMesh->MeshComponentUpdateFlag = EMeshComponentUpdateFlag::AlwaysTickPose;
+		PawnMesh->VisibilityBasedAnimTickOption =  EVisibilityBasedAnimTickOption::AlwaysTickPose;
 		PawnMesh->bCastDynamicShadow = true;
 		PawnMesh->bAffectDynamicIndirectLighting = true;
 		PawnMesh->PrimaryComponentTick.TickGroup = TG_PrePhysics;
@@ -220,7 +224,7 @@ void ACustomPawn::AddCameraPitchInput(float UpdateRate /*= 1.0f*/, float ScaleVa
 {
 	if (SpringArm != NULL)
 	{
-		FRotator CameraRelativeRot = SpringArm->RelativeRotation;
+		FRotator CameraRelativeRot = SpringArm->GetRelativeRotation();
 		float CameraNewPitch = FMath::ClampAngle(CameraRelativeRot.Pitch + ScaleValue * UpdateRate, CameraPitchMin, CameraPitchMax);
 		CameraRelativeRot.Pitch = CameraNewPitch;
 		SpringArm->SetRelativeRotation(CameraRelativeRot);

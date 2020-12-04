@@ -1,0 +1,31 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.CustomGravityPlugin.cpp.obj": [
+			"CustomPhysicsActor.cpp.obj",
+			"PlanetActor.cpp.obj",
+			"CustomGravityComponent.cpp.obj",
+			"CustomMovementComponent.cpp.obj",
+			"CustomGravityPlugin.cpp.obj",
+			"CustomGravityManager.cpp.obj",
+			"CustomPawn.cpp.obj",
+			"FirstPersonCharacter.cpp.obj",
+			"PhysicsBallPawn.cpp.obj",
+			"ThirdPersonBall.cpp.obj",
+			"ThirdPersonCharacter.cpp.obj"
+		],
+		"Module.CustomGravityPlugin.gen.cpp.obj": [
+			"CustomGravityComponent.gen.cpp.obj",
+			"CustomGravityManager.gen.cpp.obj",
+			"CustomGravityPlugin.init.gen.cpp.obj",
+			"CustomMovementComponent.gen.cpp.obj",
+			"CustomPawn.gen.cpp.obj",
+			"CustomPhysicsActor.gen.cpp.obj",
+			"FirstPersonCharacter.gen.cpp.obj",
+			"PhysicsBallPawn.gen.cpp.obj",
+			"PlanetActor.gen.cpp.obj",
+			"ThirdPersonBall.gen.cpp.obj",
+			"ThirdPersonCharacter.gen.cpp.obj"
+		]
+	}
+}

@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "4.20",
+	"EngineAssociation": "4.26",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -13,7 +13,8 @@
 	"Plugins": [
 		{
 			"Name": "CustomGravityPlugin",
-			"Enabled": true
+			"Enabled": true,
+			"MarketplaceURL": "https://github.com/mhousse1247"
 		}
 	]
 }

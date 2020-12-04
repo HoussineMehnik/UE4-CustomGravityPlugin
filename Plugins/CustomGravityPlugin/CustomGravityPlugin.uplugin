@@ -1,25 +1,25 @@
 {
-	"FileVersion" : 3,
-	"Version" : 1,
-	"VersionName" : "1.0",
-	"FriendlyName" : "Custom Gravity Plugin",
-	"Description" : "Custom Gravity Plugin",
-	"Category" : "Other",
-	"CreatedBy" : "Elhoussine Mehnik.",
-	"CreatedByURL" : "https://twitter.com/HoussineMehnik",
-	"DocsURL" : "",
-	"MarketplaceURL" : "",
-	"SupportURL" : "",
-	"EnabledByDefault" : true,
-	"CanContainContent" : false,
-	"IsBetaVersion" : false,
-	"Installed" : true,
-	"Modules" :
-	[
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Custom Gravity Plugin",
+	"Description": "Custom Gravity Plugin with gameplay examples.",
+	"Category": "Gameplay",
+	"CreatedBy": "Elhoussine Mehnik.",
+	"CreatedByURL": "https://twitter.com/HoussineMehnik",
+	"DocsURL": "http://ue4resources.com/",
+	"MarketplaceURL": "https://github.com/mhousse1247",
+	"SupportURL": "mailto:ue4resources@gmail.com",
+	"EngineVersion": "4.26.0",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": true,
+	"Modules": [
 		{
 			"Name": "CustomGravityPlugin",
-			"Type" : "Runtime",
-			"LoadingPhase" : "PreDefault"
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault"
 		}
 	]
 }

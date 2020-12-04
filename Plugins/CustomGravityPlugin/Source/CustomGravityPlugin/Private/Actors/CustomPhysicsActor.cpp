@@ -1,8 +1,13 @@
-// Copyright 2015 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
+// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
 //******************* http://ue4resources.com/ *********************//
 
 
-#include "CustomGravityPluginPrivatePCH.h"
+#include "Actors/CustomPhysicsActor.h"
+#include <Components/StaticMeshComponent.h>
+#include "Components/CustomGravityComponent.h"
+
+
+
 
 ACustomPhysicsActor::ACustomPhysicsActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

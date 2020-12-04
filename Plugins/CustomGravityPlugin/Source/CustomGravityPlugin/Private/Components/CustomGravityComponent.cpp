@@ -1,10 +1,12 @@
-// Copyright 2015 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
+// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
 //******************* http://ue4resources.com/ *********************//
 
 
 
-#include "CustomGravityPluginPrivatePCH.h"
+#include "Components/CustomGravityComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
+#include <GameFramework/PhysicsVolume.h>
+
 
 // Sets default values for this component's properties
 UCustomGravityComponent::UCustomGravityComponent()

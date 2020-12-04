@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-CustomGravityPlugin.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Plugins\Custom Gravity Project 4.26\Intermediate\Build\Win64\CustomGravityProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Plugins\Custom Gravity Project 4.26\Plugins\CustomGravityPlugin\Intermediate\Build\Win64\UE4Editor\Development\CustomGravityPlugin\Module.CustomGravityPlugin.cpp.obj"
+"C:\Plugins\Custom Gravity Project 4.26\Plugins\CustomGravityPlugin\Intermediate\Build\Win64\UE4Editor\Development\CustomGravityPlugin\Module.CustomGravityPlugin.gen.cpp.obj"
+"C:\Plugins\Custom Gravity Project 4.26\Plugins\CustomGravityPlugin\Intermediate\Build\Win64\UE4Editor\Development\CustomGravityPlugin\Default.rc2.res"
+/OUT:"C:\Plugins\Custom Gravity Project 4.26\Plugins\CustomGravityPlugin\Intermediate\Build\Win64\UE4Editor\Development\CustomGravityPlugin\UE4Editor-CustomGravityPlugin.lib"
+/INCLUDE:IMPLEMENT_MODULE_CustomGravityPlugin

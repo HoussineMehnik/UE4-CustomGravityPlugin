@@ -1,9 +1,15 @@
-// Copyright 2015 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
+// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
 //******************* http://ue4resources.com/ *********************//
 
 #pragma once
+#include "GameFramework/Pawn.h"
 #include "CustomPawn.generated.h"
 
+class UCapsuleComponent;
+class USpringArmComponent;
+class UCameraComponent;
+class UArrowComponent;
+class USceneComponent;
 
 UCLASS()
 class  CUSTOMGRAVITYPLUGIN_API ACustomPawn : public APawn

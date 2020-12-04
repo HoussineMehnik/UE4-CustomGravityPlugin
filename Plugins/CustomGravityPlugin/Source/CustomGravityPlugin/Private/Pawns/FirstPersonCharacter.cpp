@@ -1,8 +1,12 @@
-// Copyright 2015 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
+// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
 //******************* http://ue4resources.com/ *********************//
 
 
-#include "CustomGravityPluginPrivatePCH.h"
+#include "Pawns/FirstPersonCharacter.h"
+#include <Components/SkeletalMeshComponent.h>
+#include <Components/SceneComponent.h>
+#include <Camera/CameraComponent.h>
+
 
 AFirstPersonCharacter::AFirstPersonCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

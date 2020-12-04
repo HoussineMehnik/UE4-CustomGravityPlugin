@@ -1,4 +1,4 @@
-// Copyright 2015 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
+// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
 //******************* http://ue4resources.com/ *********************//
 
 using UnrealBuildTool;
@@ -7,15 +7,8 @@ public class CustomGravityPlugin : ModuleRules
 {
 	public CustomGravityPlugin(ReadOnlyTargetRules Target) : base(Target)
     {
+        PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
-		PublicIncludePaths.AddRange(
-			new string[] {
-				"CustomGravityPlugin/Public"
-				
-				// ... add public include paths required here ...
-			}
-			);
-				
 		
 		PrivateIncludePaths.AddRange(
 			new string[] {

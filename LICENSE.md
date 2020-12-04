@@ -1,10 +1,8 @@
 MIT License
 
 //====================== Editor Scripting Tools ===========================//
-
 // Copyright 2020 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
 // It's free of charge and can be used for any project and any purpose as long as it is not violating the EULA.
-
 //====================== http://ue4resources.com/ ========================//
 
 

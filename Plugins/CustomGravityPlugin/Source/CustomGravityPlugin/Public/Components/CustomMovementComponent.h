@@ -1,14 +1,13 @@
-// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
-//******************* http://ue4resources.com/ *********************//
+//==========================================================================//
+// Copyright Elhoussine Mehnik (ue4resources@gmail.com). All Rights Reserved.
+//================== http://unrealengineresources.com/ =====================//
 
 #pragma once
+
 #include "Kismet/KismetSystemLibrary.h"
 #include "GameFramework/FloatingPawnMovement.h"
+#include "Objects/CustomGravityManager.h"
 #include "CustomMovementComponent.generated.h"
-
-
-
-
 
 UENUM(BlueprintType)
 namespace EOrientationInterpolationMode
@@ -20,8 +19,6 @@ namespace EOrientationInterpolationMode
 	};
 }
 
-
-
 UENUM(BlueprintType)
 namespace EVerticalOrientation
 {
@@ -31,8 +28,6 @@ namespace EVerticalOrientation
 		EVO_SurfaceNormal	UMETA(DisplayName = "Surface Normal")
 	};
 }
-
-
 
 
 UENUM(BlueprintType)

@@ -1,14 +1,15 @@
-// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
-//******************* http://ue4resources.com/ *********************//
+//==========================================================================//
+// Copyright Elhoussine Mehnik (ue4resources@gmail.com). All Rights Reserved.
+//================== http://unrealengineresources.com/ =====================//
 
 
 #include "Pawns/PhysicsBallPawn.h"
-#include <GameFramework/SpringArmComponent.h>
-#include <Components/SceneComponent.h>
+#include "GameFramework/SpringArmComponent.h"
+#include "Components/SceneComponent.h"
 #include "Components/CustomGravityComponent.h"
-#include <Components/StaticMeshComponent.h>
-#include <Engine/CollisionProfile.h>
-#include <Camera/CameraComponent.h>
+#include "Components/StaticMeshComponent.h"
+#include "Engine/CollisionProfile.h"
+#include "Camera/CameraComponent.h"
 
 
 

@@ -7,14 +7,13 @@
 	"Category": "Gameplay",
 	"CreatedBy": "Elhoussine Mehnik.",
 	"CreatedByURL": "https://twitter.com/HoussineMehnik",
-	"DocsURL": "http://ue4resources.com/",
-	"MarketplaceURL": "https://github.com/mhousse1247",
+	"DocsURL": "https://unrealengineresources.com/documentation",
+	"MarketplaceURL": "https://unrealengineresources.com/plugins",
 	"SupportURL": "mailto:ue4resources@gmail.com",
-	"EngineVersion": "4.26.0",
-	"CanContainContent": false,
+	"CanContainContent": true,
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
-	"Installed": true,
+	"Installed": false,
 	"Modules": [
 		{
 			"Name": "CustomGravityPlugin",

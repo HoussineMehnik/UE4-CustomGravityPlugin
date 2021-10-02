@@ -1,20 +1,13 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "4.26",
+	"EngineAssociation": "4.27",
 	"Category": "",
 	"Description": "",
-	"Modules": [
-		{
-			"Name": "CustomGravityProject",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		}
-	],
 	"Plugins": [
 		{
 			"Name": "CustomGravityPlugin",
 			"Enabled": true,
-			"MarketplaceURL": "https://github.com/mhousse1247"
+			"MarketplaceURL": "https://unrealengineresources.com/plugins"
 		}
 	]
 }

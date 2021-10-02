@@ -1,5 +1,6 @@
-// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
-//******************* http://ue4resources.com/ *********************//
+//==========================================================================//
+// Copyright Elhoussine Mehnik (ue4resources@gmail.com). All Rights Reserved.
+//================== http://unrealengineresources.com/ =====================//
 
 #pragma once
 #include "GameFramework/Pawn.h"
@@ -10,6 +11,7 @@ class USpringArmComponent;
 class UCameraComponent;
 class UArrowComponent;
 class USceneComponent;
+class UCustomMovementComponent;
 
 UCLASS()
 class  CUSTOMGRAVITYPLUGIN_API ACustomPawn : public APawn
@@ -148,7 +150,7 @@ public:
 	FORCEINLINE class UCameraComponent* GetCamera() const { return Camera; }
 
 	/** Returns CustomMovement Component subobject **/
-	FORCEINLINE class UCustomMovementComponent* GetMovementComponent() const { return  MovementComponent; }
+	FORCEINLINE class UCustomMovementComponent* GetCustomMovementComponent() const { return  MovementComponent; }
 
 	/** Returns Gizmo SceneComponent subobject **/
 	FORCEINLINE class USceneComponent* GetGizmoRootComponent() const{ return  GizmoRootComponent; }

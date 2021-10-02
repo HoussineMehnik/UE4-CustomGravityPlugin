@@ -1,12 +1,13 @@
-// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
-//******************* http://ue4resources.com/ *********************//
-
+//==========================================================================//
+// Copyright Elhoussine Mehnik (ue4resources@gmail.com). All Rights Reserved.
+//================== http://unrealengineresources.com/ =====================//
 
 
 #include "Components/CustomGravityComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
-#include <GameFramework/PhysicsVolume.h>
-
+#include "GameFramework/PhysicsVolume.h"
+#include "Components/PrimitiveComponent.h"
+#include "Actors/PlanetActor.h"
 
 // Sets default values for this component's properties
 UCustomGravityComponent::UCustomGravityComponent()

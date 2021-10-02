@@ -1,11 +1,12 @@
-// Copyright 2019 Elhoussine Mehnik (Mhousse1247). All Rights Reserved.
-//******************* http://ue4resources.com/ *********************//
-
+//==========================================================================//
+// Copyright Elhoussine Mehnik (ue4resources@gmail.com). All Rights Reserved.
+//================== http://unrealengineresources.com/ =====================//
 
 #include "Pawns/FirstPersonCharacter.h"
-#include <Components/SkeletalMeshComponent.h>
-#include <Components/SceneComponent.h>
-#include <Camera/CameraComponent.h>
+#include "Components/SkeletalMeshComponent.h"
+#include "Components/SceneComponent.h"
+#include "Camera/CameraComponent.h"
+#include "GameFramework/SpringArmComponent.h"
 
 
 AFirstPersonCharacter::AFirstPersonCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)

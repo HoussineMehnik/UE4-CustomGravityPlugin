@@ -41,16 +41,16 @@ struct  CUSTOMGRAVITYPLUGIN_API FGravityInfo
 
 public:
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GravityInfo)
 		float GravityPower;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GravityInfo)
 		FVector GravityDirection;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GravityInfo)
 		TEnumAsByte<EForceMode::Type> ForceMode;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GravityInfo)
 		bool bForceSubStepping;
 
 	FGravityInfo()

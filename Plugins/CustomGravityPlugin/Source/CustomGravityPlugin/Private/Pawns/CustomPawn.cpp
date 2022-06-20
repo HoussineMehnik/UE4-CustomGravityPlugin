@@ -131,7 +131,7 @@ void ACustomPawn::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
 
-	if (!IsPendingKill())
+	if (!IsValid(this))
 	{
 		if (PawnMesh)
 		{

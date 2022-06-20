@@ -8,7 +8,7 @@ public class CustomGravityPlugin : ModuleRules
 {
 	public CustomGravityPlugin(ReadOnlyTargetRules Target) : base(Target)
     {
-		/*PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;*/   PCHUsage = ModuleRules.PCHUsageMode.NoPCHs; bUseUnity = false;
+		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;   /*PCHUsage = ModuleRules.PCHUsageMode.NoPCHs; bUseUnity = false;*/
 
 		PrivateIncludePaths.AddRange(
 			new string[] {

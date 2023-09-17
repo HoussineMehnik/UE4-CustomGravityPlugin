@@ -8,7 +8,7 @@
 #include "Components/PrimitiveComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Actors/PlanetActor.h"
-
+#include "Engine/World.h"
 
 
 UCustomMovementComponent::UCustomMovementComponent()

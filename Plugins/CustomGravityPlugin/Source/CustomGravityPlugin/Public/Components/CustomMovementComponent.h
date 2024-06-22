@@ -7,6 +7,7 @@
 #include "Kismet/KismetSystemLibrary.h"
 #include "GameFramework/FloatingPawnMovement.h"
 #include "Objects/CustomGravityManager.h"
+#include "Engine/HitResult.h"
 #include "CustomMovementComponent.generated.h"
 
 UENUM(BlueprintType)
